@@ -1,0 +1,26 @@
+{
+  "name": "dapi-assessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrozal/dapi-assessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrozal/dapi-assessment/issues"
+  },
+  "homepage": "https://github.com/jrozal/dapi-assessment#readme",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "puppeteer": "^10.2.0"
+  }
+}
