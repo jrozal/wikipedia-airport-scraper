@@ -35,12 +35,6 @@ Sample output:
 
 [
   {
-    "iata": "IATA",
-    "icao": "ICAO",
-    "airport name": "airport_name",
-    "Location served": "location_served"
-  },
-  {
     "iata": "AAA",
     "icao": "NTGA",
     "airport name": "anaa_airport",
