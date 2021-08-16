@@ -11,7 +11,6 @@ interface DataValues {
 async function init() {
   try {
     const browser = await puppeteer.launch();
-
     return browser;
   } catch (error) {
     throw error;
@@ -21,8 +20,8 @@ async function init() {
 async function loadPage(browser: puppeteer.Browser, url: string) {
   try {
     const page = await browser.newPage();
-    page.setDefaultNavigationTimeout(60000);
-    await page.goto(url, { waitUntil: 'domcontentloaded' });
+    page.setDefaultNavigationTimeout(60000);  // modified to 60s timeout for slow connections
+    await page.goto(url, { waitUntil: 'domcontentloaded' });  // wait until dom content loads
     return page;
   } catch (error) {
     throw error;
@@ -31,6 +30,7 @@ async function loadPage(browser: puppeteer.Browser, url: string) {
 
 async function loadNextPage(page: puppeteer.Page, selector: string) {
   try {
+    // click selector and allow dom content to load
     await Promise.all([
       page.waitForNavigation({ waitUntil: 'domcontentloaded' }),
       page.click(selector)
