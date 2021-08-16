@@ -10,31 +10,35 @@ import {
 import { scrapeAndConvertData } from './lib/scrapeAndConvert';
 
 async function wikiAirportScraper(url: string) {
-  console.log('Initializing Wiki Airport Scraper');
+  console.log('Initializing Wikipedia Airport Scraper');
   try {
     const browser = await init();
     const page = await loadPage(browser, url);
     const iataSelectors = generateIataSelectors();
 
+    // iterate through each selector, click link, scrape and convert data, and save to local json file
     for (const selector of iataSelectors) {
       const nextPage = await loadNextPage(page, selector);
 
       const scrapedData = await scrapeAndConvertData(nextPage);
 
       fs.readFile('output.json', (err, data) => {
+        // if file does not exist, create and save new json file
         if (err) {
           if (err.code !== 'ENOENT') throw err;
           return saveNewJson('output.json', scrapedData)
         }
 
+        // else save to existing json file
         return saveToJson('output.json', data, scrapedData);
       });
 
       await nextPage.goBack();
     }
 
+    // close browser and log completion notice to console
     await browser.close();
-    console.log('Wiki Airport Scraping Complete');
+    console.log('Wikipedia Airport Scraping Complete');
   } catch (err) {
     console.error(err);
   }
