@@ -32,7 +32,7 @@ async function loadNextPage(page: puppeteer.Page, selector: string) {
   try {
     // click selector and allow dom content to load
     await Promise.all([
-      page.waitForNavigation({ waitUntil: 'domcontentloaded' }),
+      page.waitForNavigation({ waitUntil: 'networkidle0' }),
       page.click(selector)
     ]);
     return page;
