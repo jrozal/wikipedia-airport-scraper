@@ -27,6 +27,30 @@ npm run build
 npm run start
 ```
 
+* ### On success
+```json
+Data locally saved to 'output.json' in the root directory. File must be deleted before running the script again, else newly scraped data will be appended to file.
+
+Sample output:
+
+[
+  {
+    "iata": "IATA",
+    "icao": "ICAO",
+    "airport name": "airport_name",
+    "Location served": "location_served"
+  },
+  {
+    "iata": "AAA",
+    "icao": "NTGA",
+    "airport name": "anaa_airport",
+    "Location served": "anaa_tuamotus_french_polynesia"
+  },
+  {...},
+  ...
+]
+```
+
 ## Built With
 
 * [Typescript](https://www.typescriptlang.org/docs/)
