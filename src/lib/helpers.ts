@@ -10,7 +10,10 @@ interface DataValues {
 
 async function init() {
   try {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      headless: false,
+      slowMo: 250
+    });
     return browser;
   } catch (error) {
     throw error;
