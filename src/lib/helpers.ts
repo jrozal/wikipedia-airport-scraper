@@ -42,10 +42,8 @@ async function loadNextPage(page: puppeteer.Page, selector: string) {
 }
 
 function generateIataSelectors() {
-  const alphabet = [
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-  ];
+  const alpha = Array.from(Array(26)).map((e, i) => i + 65);
+  const alphabet = alpha.map((x) => String.fromCharCode(x));
 
   return alphabet.map((letter) => {
     let selector = `[title="List of airports by IATA airport code: ${letter}"]`;
