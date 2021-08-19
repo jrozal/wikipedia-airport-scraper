@@ -30,7 +30,7 @@ async function loadPage(browser: puppeteer.Browser, url: string) {
 
 async function loadNextPage(page: puppeteer.Page, selector: string) {
   try {
-    // click selector and allow dom content to load
+    // click selector and wait for network idle to ensure fully loaded
     await Promise.all([
       page.waitForNavigation({ waitUntil: 'networkidle0' }),
       page.click(selector)
