@@ -19,7 +19,7 @@ async function wikiAirportScraper(url: string) {
     // iterate through each selector, click link, scrape and convert data, and save to local json file
     for (const selector of iataSelectors) {
       const nextPage = await loadNextPage(page, selector);
-
+      console.log('Scraping airport data for alphabet letter:', selector.slice(-3, -2));
       const scrapedData = await scrapeAndConvertData(nextPage);
 
       fs.readFile('output.json', (err, data) => {
