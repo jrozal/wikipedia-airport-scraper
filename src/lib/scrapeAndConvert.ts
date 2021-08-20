@@ -7,7 +7,9 @@ interface DataValues {
   'Location served': string;
 };
 
-// function scrapeAndConvertData scrapes table data one row at a time, coverts string data, and returns results as an array of objects
+/* function scrapeAndConvertData scrapes table data one row at a time,
+ * coverts string data, and returns results as an array of objects */
+
 export async function scrapeAndConvertData(page: puppeteer.Page) {
   try {
     return await page.evaluate(() => {
