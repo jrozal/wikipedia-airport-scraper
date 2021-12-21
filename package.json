@@ -1,5 +1,5 @@
 {
-  "name": "dapi-assessment",
+  "name": "wikipedia-airport-scraper",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jrozal/dapi-assessment.git"
+    "url": "git+https://github.com/jrozal/wikipedia-airport-scraper"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jrozal/dapi-assessment/issues"
+    "url": "https://github.com/jrozal/wikipedia-airport-scraper/issues"
   },
-  "homepage": "https://github.com/jrozal/dapi-assessment#readme",
+  "homepage": "https://github.com/jrozal/wikipedia-airport-scraper#readme",
   "devDependencies": {
     "@types/node": "^16.6.1",
     "@types/puppeteer": "^5.4.4",
